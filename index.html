@@ -1,37 +1,84 @@
 <!DOCTYPE html>
+<!-- La línea de arriba (DOCTYPE) le dice al navegador que este documento está escrito en HTML5. Debe ir siempre hasta arriba. -->
+
+<!-- <html> es la etiqueta raíz: encierra toda la página. El atributo lang="es" indica que el idioma es español (sirve para buscadores y lectores de pantalla). -->
 <html lang="es">
+
+    <!-- <head> guarda información sobre la página que NO se muestra dentro de ella. -->
     <head>
+        <!-- charset="UTF-8": codificación de caracteres; permite mostrar bien acentos, ñ y signos como ¿ y ¡. -->
         <meta charset="UTF-8">
+
+        <!-- <title>: texto que aparece en la pestaña del navegador y en los resultados de búsqueda. -->
         <title>Historia MX</title>
     </head>
+    <!-- Aquí termina el encabezado. -->
+
+    <!-- <body> contiene todo lo visible de la página. bgcolor="#f2f2f2" pone el fondo gris muy claro (color en formato hexadecimal). -->
     <body bgcolor="#f2f2f2">
+
+        <!-- <center> centra horizontalmente todo lo que tenga adentro (es una etiqueta antigua). -->
         <center>
+            <!-- <font> cambia el estilo del texto: size="7" es tamaño grande (va de 1 a 7) y color="green" lo pone verde. -->
+            <!-- <b> pone el texto en negritas. Este es el título principal del sitio. -->
             <font size="7" color="green"><b>HISTORIA MX</b></font>
         </center>
+
+        <!-- <hr> dibuja una línea horizontal para separar secciones. No necesita etiqueta de cierre. -->
         <hr>
+
+        <!-- Nuevo bloque centrado, ahora para el menú de navegación. -->
         <center>
+            <!-- size="4" hace el texto del menú de tamaño mediano. -->
             <font size="4">
+            <!-- <a> crea un enlace. href es la dirección a la que lleva. -->
+            <!-- Aquí las demás páginas están dentro de la carpeta "vistas", por eso la ruta empieza con vistas/ (entra a esa carpeta). -->
             <a href="vistas/tiempo.html">Línea de Tiempo</a>
+
+            <!-- &nbsp; es un espacio que no se corta ni se junta con otros; se usa para dar aire alrededor del símbolo | que separa los enlaces. -->
             &nbsp;|&nbsp;
+
+            <!-- Enlace a personajes.html, dentro de la carpeta vistas. -->
             <a href="vistas/personajes.html">Personajes</a>
+
             &nbsp;|&nbsp;
+
+            <!-- Enlace a datos.html, dentro de la carpeta vistas. -->
             <a href="vistas/datos.html">Datos y Mitos</a>
             </font>
         </center>
+
+        <!-- Línea horizontal que separa el menú del contenido. -->
         <hr>
+
+        <!-- <p> crea un párrafo. align="center" centra el texto del párrafo. -->
         <p align="center">
+            <!-- size="3" es tamaño normal y color="black" pone el texto en negro. -->
             <font size="3" color="black">
+            <!-- Texto de bienvenida que explica de qué trata el sitio y cómo usarlo. -->
             Un recorrido sencillo por las fechas y personajes de nuestra historia.
             Usa el menú de arriba para explorar cada sección.
             </font>
         </p>
+
+        <!-- Línea horizontal que separa el contenido del pie de página. -->
         <hr>
+
+        <!-- <footer> es una etiqueta de HTML5 que indica que este bloque es el pie de página de la página. -->
         <footer>
+        <!-- Centra el bloque con los datos del alumno. -->
         <center>
+            <!-- Texto pequeño (size="2") y blanco, para que se lea sobre el fondo verde de la tabla. -->
             <font size="2" color="white">
+
+            <!-- <table> crea una tabla. bgcolor="green": fondo verde. width="100%": ocupa todo el ancho de la página. -->
+            <!-- cellpadding="8": deja 8 píxeles de espacio entre el borde de la celda y el texto. -->
             <table bgcolor="green" width="100%" cellpadding="8">
+                <!-- <tr> es una fila de la tabla (table row). -->
                 <tr>
+                <!-- <td> es una celda (table data). align="center" centra el texto dentro de la celda. -->
                 <td align="center">
+                    <!-- <br> hace un salto de línea, sin dejar espacio extra como lo hace <p>. -->
                     Nombre: Castro López Emmanuel<br>
                     Grado: 5J &nbsp;|&nbsp; Num. Control: 24308051280847<br>
                     Escuela: CBTIS 128
@@ -41,5 +88,10 @@
             </font>
         </center>
         </footer>
+        <!-- Aquí termina el pie de página. -->
+
     </body>
+    <!-- Aquí termina el cuerpo de la página. -->
+
 </html>
+<!-- Aquí termina el documento HTML. -->
