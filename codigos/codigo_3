@@ -1,0 +1,27 @@
+<!DOCTYPE html> <!-- Avisa al navegador que esta es una página web -->
+<html lang="en"> <!-- Inicio de toda la página -->
+
+<head> <!-- Información que la página necesita pero no se ve en pantalla -->
+    <meta charset="UTF-8"> <!-- Para poder usar acentos y la letra ñ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Para que se vea bien en celulares -->
+    <title>Salto de linea en HTML</title> <!-- Título que sale en la pestaña del navegador -->
+</head>
+
+<body> <!-- Todo lo que sí se ve en la pantalla -->
+    <h1>Lenguaje de programacion</h1> <!-- h1: Título principal -->
+    <p>En la actualidad se utilizan diferentes <!-- p: Sirve para escribir párrafos de texto -->
+        lenguajes de programacion tanto para desarrollo
+        web, desarrollo movil, entranamiento de inteligencia
+        artificial, pero de los mas usados son
+        los siguientes:<br> <!-- br: Hace un salto de línea (baja al siguiente renglón) -->
+        Dart<br>
+        Flutter<br>
+        Python<br>
+        Ruby<br>
+        Java<br>
+        TypeScript<br>
+        Entre otros.
+    </p>
+</body>
+
+</html>
