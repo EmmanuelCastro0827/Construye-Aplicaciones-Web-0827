@@ -1,0 +1,50 @@
+<!DOCTYPE html> <!-- Avisa al navegador que esta es una página web -->
+<html lang="en"> <!-- Inicio de toda la página -->
+
+<head> <!-- Información que la página necesita pero no se ve en pantalla -->
+    <meta charset="UTF-8"> <!-- Para poder usar acentos y la letra ñ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Para que se vea bien en celulares -->
+    <title>Enlaces en HTML</title> <!-- Título que sale en la pestaña del navegador -->
+</head>
+
+<body> <!-- Todo lo que sí se ve en la pantalla -->
+    <h2>Tipos de enlaces en HTML</h2>
+    <p><strong>Enlaces/Hipervinculos a otra pagina del
+         mismo sitio.
+    </strong></p>
+
+    <!-- a: Crea un enlace (link). href: Es la dirección a donde te lleva -->
+    <a href="1. Hola_mundo.html">1. Hola Mundo</a><br>
+
+    <!-- target="_self": Abre el enlace en la MISMA pestaña (es la opción normal) -->
+    <a href="2. Encabezados.html" target="_self">
+        2. Encabezados</a><br>
+
+    <!-- target="_blank": Abre el enlace en una NUEVA pestaña -->
+    <a href="3. Parrafos.html" target="_blank">
+        3. Parrafos</a><br>
+
+    <!-- target="_parent": Abre el enlace en el marco (frame) padre -->
+    <a href="4. Salto de linea.html" target="_parent">
+        4. Salto de linea</a><br>
+
+    <!-- target="_top": Abre el enlace en toda la pantalla (elimina marcos) -->
+    <a href="5. Enfatizado.html" target="_top">
+        5. Enfatizado</a><br>
+
+    <p><strong>Enlaces/Hipervinculos a sitios externos
+    </strong></p>
+
+    <!-- Para páginas externas a tu sitio, se usa la dirección completa con https:// -->
+    <a href="https://www.google.com/">Google</a><br>
+    <a href="https://www.youtube.com/" target="_self">
+        YouTube</a><br>
+    <a href="https://www.facebook.com/" target="_blank">
+        FaceBook</a><br>
+    <a href="https://www.wikipedia.com/" target="_parent">
+        WikiPedia</a><br>
+    <a href="https://www.espanol.yahoo.com/" target="_top">
+        Yahoo!</a><br>
+</body>
+
+</html>
