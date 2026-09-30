@@ -1,97 +1,165 @@
 <!DOCTYPE html>
-<!-- La línea de arriba (DOCTYPE) le dice al navegador que este documento está escrito en HTML5. Debe ir siempre hasta arriba. -->
-
-<!-- <html> es la etiqueta raíz: encierra toda la página. El atributo lang="es" indica que el idioma es español (sirve para buscadores y lectores de pantalla). -->
+<!-- DOCTYPE: le indica al navegador que este documento es HTML5 -->
 <html lang="es">
+<!-- <html>: etiqueta raíz que contiene toda la página.
+     lang="es": atributo que indica que el idioma del contenido es español -->
+<head>
+<!-- <head>: sección con información de la página que no se muestra directamente -->
 
-    <!-- <head> guarda información sobre la página que NO se muestra dentro de ella. -->
-    <head>
-        <!-- charset="UTF-8": codificación de caracteres; permite mostrar bien acentos, ñ y signos como ¿ y ¡. -->
-        <meta charset="UTF-8">
+<meta charset="UTF-8">
+<!-- <meta charset>: define la codificación de caracteres; UTF-8 permite acentos y la ñ -->
 
-        <!-- <title>: texto que aparece en la pestaña del navegador y en los resultados de búsqueda. -->
-        <title>Historia MX</title>
-    </head>
-    <!-- Aquí termina el encabezado. -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <meta viewport>: hace que la página se adapte al ancho de pantalla en celulares -->
 
-    <!-- <body> contiene todo lo visible de la página. bgcolor="#f2f2f2" pone el fondo gris muy claro (color en formato hexadecimal). -->
-    <body bgcolor="#f2f2f2">
+<title>Horario 5J</title>
+<!-- <title>: texto que aparece en la pestaña del navegador -->
 
-        <!-- <center> centra horizontalmente todo lo que tenga adentro (es una etiqueta antigua). -->
-        <center>
-            <!-- <font> cambia el estilo del texto: size="7" es tamaño grande (va de 1 a 7) y color="green" lo pone verde. -->
-            <!-- <b> pone el texto en negritas. Este es el título principal del sitio. -->
-            <font size="7" color="green"><b>HISTORIA MX</b></font>
-        </center>
+<style>
+  /* <style>: aquí se escribe el CSS, que da el diseño y la apariencia a la página */
 
-        <!-- <hr> dibuja una línea horizontal para separar secciones. No necesita etiqueta de cierre. -->
-        <hr>
+  body {
+    font-family: Arial, sans-serif; /* tipo de letra de toda la página */
+    margin: 16px;                   /* espacio exterior alrededor del contenido */
+    color: #000;                    /* color del texto: negro */
+    background: #fff;               /* color de fondo: blanco */
+  }
 
-        <!-- Nuevo bloque centrado, ahora para el menú de navegación. -->
-        <center>
-            <!-- size="4" hace el texto del menú de tamaño mediano. -->
-            <font size="4">
-            <!-- <a> crea un enlace. href es la dirección a la que lleva. -->
-            <!-- Aquí las demás páginas están dentro de la carpeta "vistas", por eso la ruta empieza con vistas/ (entra a esa carpeta). -->
-            <a href="vistas/tiempo.html">Línea de Tiempo</a>
+  h1, h2 {
+    text-align: center; /* centra los títulos */
+    margin: 4px 0;      /* 4px de espacio arriba y abajo, 0 a los lados */
+  }
 
-            <!-- &nbsp; es un espacio que no se corta ni se junta con otros; se usa para dar aire alrededor del símbolo | que separa los enlaces. -->
-            &nbsp;|&nbsp;
+  h1 { font-size: 20px; }                    /* tamaño del título de la escuela */
+  h2 { font-size: 24px; margin-bottom: 10px; } /* tamaño del título "Horario 5J" y separación con la tabla */
 
-            <!-- Enlace a personajes.html, dentro de la carpeta vistas. -->
-            <a href="vistas/personajes.html">Personajes</a>
+  table {
+    border-collapse: collapse; /* une los bordes de las celdas en una sola línea */
+    width: 100%;               /* la tabla ocupa todo el ancho disponible... */
+    max-width: 820px;          /* ...pero sin pasar de 820px */
+    margin: 0 auto;            /* centra la tabla horizontalmente */
+  }
 
-            &nbsp;|&nbsp;
+  th, td {
+    border: 1px solid #000; /* borde negro de 1px en encabezados y celdas */
+    text-align: center;     /* centra el texto dentro de cada celda */
+    font-size: 13px;        /* tamaño de letra de la tabla */
+    padding: 6px 3px;       /* espacio interior: 6px arriba/abajo, 3px a los lados */
+  }
 
-            <!-- Enlace a datos.html, dentro de la carpeta vistas. -->
-            <a href="vistas/datos.html">Datos y Mitos</a>
-            </font>
-        </center>
+  footer {
+    text-align: center; /* centra el texto del pie de página */
+    margin-top: 16px;   /* separación entre la tabla y el pie */
+    font-size: 14px;    /* tamaño de letra del pie */
+  }
+</style>
+</head>
 
-        <!-- Línea horizontal que separa el menú del contenido. -->
-        <hr>
+<body>
+<!-- <body>: todo el contenido visible de la página -->
 
-        <!-- <p> crea un párrafo. align="center" centra el texto del párrafo. -->
-        <p align="center">
-            <!-- size="3" es tamaño normal y color="black" pone el texto en negro. -->
-            <font size="3" color="black">
-            <!-- Texto de bienvenida que explica de qué trata el sitio y cómo usarlo. -->
-            Un recorrido sencillo por las fechas y personajes de nuestra historia.
-            Usa el menú de arriba para explorar cada sección.
-            </font>
-        </p>
+<h1>Centro de Bachillerato Técnico Industrial y de Servicios #128</h1>
+<!-- <h1>: encabezado principal (nombre de la escuela) -->
 
-        <!-- Línea horizontal que separa el contenido del pie de página. -->
-        <hr>
+<h2>Horario 5J</h2>
+<!-- <h2>: encabezado secundario (nombre del horario) -->
 
-        <!-- <footer> es una etiqueta de HTML5 que indica que este bloque es el pie de página de la página. -->
-        <footer>
-        <!-- Centra el bloque con los datos del alumno. -->
-        <center>
-            <!-- Texto pequeño (size="2") y blanco, para que se lea sobre el fondo verde de la tabla. -->
-            <font size="2" color="white">
+<table>
+  <!-- <table>: crea la tabla del horario -->
 
-            <!-- <table> crea una tabla. bgcolor="green": fondo verde. width="100%": ocupa todo el ancho de la página. -->
-            <!-- cellpadding="8": deja 8 píxeles de espacio entre el borde de la celda y el texto. -->
-            <table bgcolor="green" width="100%" cellpadding="8">
-                <!-- <tr> es una fila de la tabla (table row). -->
-                <tr>
-                <!-- <td> es una celda (table data). align="center" centra el texto dentro de la celda. -->
-                <td align="center">
-                    <!-- <br> hace un salto de línea, sin dejar espacio extra como lo hace <p>. -->
-                    Nombre: Castro López Emmanuel<br>
-                    Grado: 5J &nbsp;|&nbsp; Num. Control: 24308051280847<br>
-                    Escuela: CBTIS 128
-                </td>
-                </tr>
-            </table>
-            </font>
-        </center>
-        </footer>
-        <!-- Aquí termina el pie de página. -->
+  <tr>
+    <!-- <tr>: fila de la tabla (table row). Esta es la fila de encabezados -->
+    <th>Hora</th><th>Lunes</th><th>Martes</th><th>Miércoles</th><th>Jueves</th><th>Viernes</th>
+    <!-- <th>: celda de encabezado (table header), va en negritas y centrada por defecto -->
+  </tr>
 
-    </body>
-    <!-- Aquí termina el cuerpo de la página. -->
+  <!-- ===== 7:00 ===== -->
+  <tr>
+    <td>7:00</td>
+    <!-- <td>: celda de datos (table data). Aquí va la hora -->
 
+    <td rowspan="2"></td>
+    <!-- rowspan="2": la celda se extiende 2 filas hacia abajo (lunes 7:00 y 8:00 vacío) -->
+
+    <td>5° CH 2<br>Juárez<br>AULA 38</td>
+    <!-- <br>: salto de línea dentro de la celda (materia / maestro / aula) -->
+
+    <td>5° Apil. Adm<br>Estrada<br>AULA 38</td>
+    <td>5° Apil. Adm<br>Estrada<br>AULA 38</td>
+    <td>5° Ingles 5<br>Terrazas<br>AULA 38</td>
+  </tr>
+
+  <!-- ===== 8:00 ===== -->
+  <tr>
+    <td>8:00</td>
+    <!-- Aquí no hay celda de lunes porque la de las 7:00 (rowspan) ya ocupa ese espacio -->
+    <td>5° Apil. Adm<br>Estrada<br>AULA 38</td>
+    <td>5° CH 2<br>Juárez<br>AULA 38</td>
+    <td>5° Ingles 5<br>Terrazas<br>AULA 38</td>
+    <td>5° CH 2<br>Juárez<br>AULA 38</td>
+  </tr>
+
+  <!-- ===== 9:00 ===== -->
+  <tr>
+    <td>9:00</td>
+    <td>5° Ingles 5<br>Terrazas<br>AULA 38</td>
+    <td rowspan="2">PROG M4S1<br>Meza<br>AULA 38</td>
+    <!-- rowspan="2": la clase dura 2 horas (9:00 y 10:00), por eso una sola celda alta -->
+    <td>PROG M4S1<br>Meza<br>AULA 38</td>
+    <td rowspan="2">PROG M4S1<br>Meza<br>AULA 38</td>
+    <td rowspan="2">PROG M4S1<br>Meza<br>AULA 38</td>
+  </tr>
+
+  <!-- ===== 10:00 ===== -->
+  <tr>
+    <td>10:00</td>
+    <!-- Martes, jueves y viernes no aparecen: ya están cubiertos por rowspan de la fila anterior -->
+    <td>5° CNEyT 5<br>Reyes<br>AULA 38</td>
+    <td>5° Ingles 5<br>Terrazas<br>AULA 38</td>
+  </tr>
+
+  <!-- ===== RECREO ===== -->
+  <tr>
+    <td colspan="6">recreo</td>
+    <!-- colspan="6": la celda se extiende a lo ancho de las 6 columnas (Hora + 5 días) -->
+  </tr>
+
+  <!-- ===== 11:00 ===== -->
+  <tr>
+    <td>11:00</td>
+    <td>PROG M4S2<br>Gonzales A<br>AULA 38</td>
+    <td rowspan="2">5° Ingles 5<br>Terrazas<br>AULA 38</td>
+    <td rowspan="2">5° CNEyT 5<br>Reyes<br>AULA 38</td>
+    <td rowspan="2">PROG M4S2<br>Gonzales A<br>AULA 38</td>
+    <td>5° CNEyT 5<br>Reyes<br>AULA 38</td>
+  </tr>
+
+  <!-- ===== 12:00 ===== -->
+  <tr>
+    <td>12:00</td>
+    <td>5° FS<br>Meza<br>AULA 38</td>
+    <td>PROG M4S2<br>Gonzales A<br>AULA 38</td>
+  </tr>
+
+  <!-- ===== 13:00 - 14:00 ===== -->
+  <tr>
+    <td>13:00<br>14:00</td>
+    <!-- Las dos horas se muestran en una sola celda separadas con <br> -->
+    <td>5° TSdM 2<br>Macias<br>AULA 38</td>
+    <td>5° TSdM 2<br>Macias<br>AULA 38</td>
+    <td>5° TSdM 2<br>Macias<br>AULA 38</td>
+    <td>5° TSdM 2<br>Macias<br>AULA 38</td>
+    <td>5° TSdM 2<br>Macias<br>AULA 38</td>
+  </tr>
+</table>
+
+<footer>
+  <!-- <footer>: pie de página; aquí van los datos del alumno -->
+  <p>Castro Lopez Emmanuel &nbsp;|&nbsp; Número de control: 0827 &nbsp;|&nbsp; Grupo: 5-J</p>
+  <!-- <p>: párrafo de texto.
+       &nbsp;: espacio que no se corta (non-breaking space), sirve para separar los datos
+       |: barra vertical usada como separador visual -->
+</footer>
+
+</body>
 </html>
-<!-- Aquí termina el documento HTML. -->
