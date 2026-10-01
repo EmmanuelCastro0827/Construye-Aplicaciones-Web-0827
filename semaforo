@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<!-- Practica: Semaforo TRIAGE -->
+<!-- Nombre del alumno: ESCRIBA AQUI SU NOMBRE COMPLETO -->
+<!-- Grupo: ________  Fecha: ________ -->
+<title>Semáforo TRIAGE</title>
+</head>
+
+<!-- Fondo blanco del documento -->
+<body bgcolor="white">
+
+<!-- Titulo principal -->
+<h1>
+  <font color="#0b2a6b" size="5">Semáforo</font>
+  <font color="#0b2a6b" size="7"><i>TRIAGE</i></font>
+</h1>
+
+<p align="right">
+  <font color="gray" size="3"><i>urgencias</i></font>
+</p>
+
+<!-- Tabla de encabezados y datos -->
+<table width="100%" cellpadding="18" cellspacing="8" align="center">
+
+  <!-- Encabezados -->
+  <tr bgcolor="#dde6f5" align="center">
+    <th><font color="#0b2a6b" size="2">Tipo de atención</font></th>
+    <th><font color="#0b2a6b" size="2">Área de atención</font></th>
+    <th><font color="#0b2a6b" size="2">Tiempo de espera</font></th>
+  </tr>
+
+  <!-- Reanimacion -->
+  <tr align="center">
+    <td><font color="red" size="5"><b><i>Reanimación</i></b></font></td>
+    <td><font color="red" size="3">Área de<br>reanimación</font></td>
+    <td><font color="red" size="3">Inmediato<br>hasta 3 min</font></td>
+  </tr>
+
+  <!-- Emergencia -->
+  <tr align="center">
+    <td><font color="darkorange" size="5"><b><i>Emergencia</i></b></font></td>
+    <td><font color="darkorange" size="3">Área de<br>reanimación</font></td>
+    <td><font color="darkorange" size="3">Inmediato<br>hasta 10 min</font></td>
+  </tr>
+
+  <!-- Urgencia -->
+  <tr align="center">
+    <td><font color="gold" size="5"><b><i>Urgencia</i></b></font></td>
+    <td><font color="gold" size="3">Consultorio de<br>primer contacto</font></td>
+    <td><font color="gold" size="3">Hasta 30 min</font></td>
+  </tr>
+
+  <!-- Urgencia menor -->
+  <tr align="center">
+    <td><font color="green" size="5"><b><i>Urgencia menor</i></b></font></td>
+    <td><font color="green" size="3">Consultorio de<br>primer contacto<br>o UMF</font></td>
+    <td><font color="green" size="3">Hasta 120 min</font></td>
+  </tr>
+
+  <!-- Sin urgencia -->
+  <tr align="center">
+    <td><font color="blue" size="5"><b><i>Sin urgencia</i></b></font></td>
+    <td><font color="blue" size="3">Consultorio de<br>primer contacto<br>o UMF</font></td>
+    <td><font color="blue" size="3">Hasta 180 min</font></td>
+  </tr>
+
+</table>
+
+<p align="center">
+  <font color="gray" size="2"><i>medicina paramédicos</i></font>
+</p>
+
+</body>
+</html>
