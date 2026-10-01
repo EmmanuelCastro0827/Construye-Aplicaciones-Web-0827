@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <!-- Practica: Semaforo TRIAGE -->
@@ -5,7 +6,7 @@
 <title>Semaforo TRIAGE</title>
 </head>
 
-<body>
+<body bgcolor="white">
 
 <h1>
 <font color="navy" size="5">Semáforo</font>
@@ -17,7 +18,7 @@
 <hr>
 
 <p>
-<font color="navy" size="3"><b>Tipo de atención &nbsp;&nbsp;|&nbsp;&nbsp; Área de atención &nbsp;&nbsp;|&nbsp;&nbsp; Tiempo de espera</b></font>
+<font color="navy" size="3"><b>Tipo de atención<br>Área de atención<br>Tiempo de espera</b></font>
 </p>
 
 <hr>
