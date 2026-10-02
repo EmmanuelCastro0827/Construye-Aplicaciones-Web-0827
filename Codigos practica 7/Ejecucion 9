@@ -1,0 +1,22 @@
+<!DOCTYPE html> <!-- Documento HTML5 -->
+<html lang="es">
+<head>
+<meta charset="UTF-8"> <!-- Acentos y ñ -->
+<title>Formulario con campos ocultos</title> <!-- Titulo de la pestaña -->
+<!-- Libreria de iconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/7.3.1/css/all.min.css">
+</head>
+<body> <!-- Contenido visible -->
+<h2>Formulario con campos ocultos</h2>
+<form action="" method="post">
+<!-- hidden: campo invisible que se envia al servidor -->
+<input type="hidden" name="hora" value="3:30">
+Ingresa tu nombre:
+<input type="text" name="nombre">
+<br>
+<!-- button: boton con texto e icono (Font Awesome) -->
+<button type="submit">Enviar <i class="fa-regular fa-paper-plane"></i></button>
+<button type="reset">Borrar <i class="fa fa-trash"></i></button>
+</form>
+</body>
+</html>
