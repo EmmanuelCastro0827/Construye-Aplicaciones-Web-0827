@@ -1,0 +1,19 @@
+<!DOCTYPE html> <!-- Documento HTML5 -->
+<html lang="es">
+<head>
+<meta charset="UTF-8"> <!-- Acentos y ñ -->
+<title>Ejemplo básico</title> <!-- Titulo de la pestaña -->
+</head>
+<body> <!-- Contenido visible -->
+<h2>Ejemplo basico</h2>
+<!-- form: action = destino de los datos, method="post" = como se envian -->
+<form action="" method="post">
+Ingresa tu nombre:
+<!-- Campo de texto de una linea -->
+<input type="text" name="nombre" size="20">
+<br> <!-- Salto de linea -->
+<!-- Boton que envia el formulario -->
+<input type="submit" value="enviar">
+</form>
+</body>
+</html>
