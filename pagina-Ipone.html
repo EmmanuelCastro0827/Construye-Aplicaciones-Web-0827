@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!-- DOCTYPE: le indica al navegador que este documento es HTML5 -->
+
+<html lang="es">
+<!-- html: etiqueta raíz, contiene toda la página. lang="es": indica que el idioma es español -->
+
+<head>
+  <!-- head: contiene información de la página que no se ve directamente (configuración) -->
+
+  <meta charset="UTF-8">
+  <!-- meta charset: permite mostrar acentos y la letra ñ correctamente -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- meta viewport: hace que la página se adapte al ancho de celulares y tablets -->
+
+  <title>iStore - Tienda de iPhone</title>
+  <!-- title: texto que aparece en la pestaña del navegador -->
+
+  <style>
+    /* style: aquí se escribe el CSS básico para dar color y orden a la página */
+
+    /* body: estilos generales de toda la página */
+    body {
+      font-family: Arial, sans-serif;  /* tipo de letra */
+      margin: 0;                       /* quita el margen por defecto */
+      background-color: #f2f2f7;       /* color de fondo gris claro */
+      color: #1d1d1f;                  /* color del texto */
+    }
+
+    /* header: estilos del encabezado */
+    header {
+      background-color: #1d1d1f;       /* fondo oscuro */
+      color: white;                    /* texto blanco */
+      text-align: center;              /* texto centrado */
+      padding: 30px 10px;              /* espacio interno */
+    }
+
+    /* nav: estilos de la barra de navegación */
+    nav {
+      background-color: #0071e3;       /* fondo azul */
+      text-align: center;              /* enlaces centrados */
+      padding: 12px;                   /* espacio interno */
+    }
+
+    /* nav a: estilos de los enlaces dentro de la barra */
+    nav a {
+      color: white;                    /* texto blanco */
+      text-decoration: none;           /* quita el subrayado */
+      margin: 0 15px;                  /* separación entre enlaces */
+      font-weight: bold;               /* texto en negritas */
+    }
+
+    /* nav a:hover: cambia el estilo cuando pasas el mouse encima */
+    nav a:hover {
+      text-decoration: underline;      /* subraya el enlace */
+    }
+
+    /* main: estilos del cuerpo de la página */
+    main {
+      max-width: 800px;                /* ancho máximo del contenido */
+      margin: 20px auto;               /* centra el contenido */
+      padding: 0 15px;                 /* espacio a los lados */
+    }
+
+    /* section: cada bloque del cuerpo parece una tarjeta blanca */
+    section {
+      background-color: white;         /* fondo blanco */
+      padding: 20px;                   /* espacio interno */
+      margin-bottom: 20px;             /* separación entre secciones */
+      border-radius: 12px;             /* esquinas redondeadas */
+    }
+
+    /* table: estilos de las tablas */
+    table {
+      width: 100%;                     /* ocupa todo el ancho */
+      border-collapse: collapse;       /* une los bordes de las celdas */
+    }
+
+    /* th y td: encabezados y celdas de las tablas */
+    th, td {
+      border: 1px solid #ccc;          /* borde gris */
+      padding: 8px;                    /* espacio interno */
+      text-align: left;                /* texto alineado a la izquierda */
+    }
+
+    /* th: encabezados de la tabla */
+    th {
+      background-color: #0071e3;       /* fondo azul */
+      color: white;                    /* texto blanco */
+    }
+
+    /* button: estilos de los botones */
+    button {
+      background-color: #0071e3;       /* fondo azul */
+      color: white;                    /* texto blanco */
+      border: none;                    /* sin borde */
+      padding: 10px 20px;              /* espacio interno */
+      border-radius: 20px;             /* botón redondeado */
+      cursor: pointer;                 /* manita al pasar el mouse */
+    }
+
+    /* input, select, textarea: campos del formulario */
+    input, select, textarea {
+      width: 100%;                     /* ocupan todo el ancho */
+      padding: 8px;                    /* espacio interno */
+      margin-top: 4px;                 /* separación con la etiqueta */
+      box-sizing: border-box;          /* evita que se salgan del contenedor */
+    }
+
+    /* footer: estilos del pie de página */
+    footer {
+      background-color: #1d1d1f;       /* fondo oscuro */
+      color: white;                    /* texto blanco */
+      text-align: center;              /* texto centrado */
+      padding: 20px;                   /* espacio interno */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- body: contiene todo lo que se ve en la página -->
+
+  <!-- ===================== ENCABEZADO ===================== -->
+  <header>
+    <!-- header: encabezado de la página, normalmente lleva el título y un lema -->
+
+    <h1>iStore</h1>
+    <!-- h1: título principal (el más grande). Solo se usa uno por página -->
+
+    <p>Tu tienda de iPhone de confianza</p>
+    <!-- p: párrafo de texto -->
+  </header>
+
+  <!-- ===================== BARRA DE NAVEGACIÓN ===================== -->
+  <nav>
+    <!-- nav: contiene los enlaces para moverse por el sitio -->
+
+    <a href="#inicio">Inicio</a>
+    <!-- a: enlace. href="#inicio": lleva a la sección que tiene id="inicio" -->
+
+    <a href="#catalogo">Catálogo</a>
+    <a href="#contactos">Contactos</a>
+  </nav>
+
+  <!-- ===================== CUERPO ===================== -->
+  <main>
+    <!-- main: contenido principal de la página -->
+
+    <section id="inicio">
+      <!-- section: agrupa un tema. id="inicio": nombre único para que el enlace del menú llegue aquí -->
+
+      <h2>Bienvenido</h2>
+      <!-- h2: título de sección (más pequeño que h1) -->
+
+      <p>
+        Vendemos iPhone nuevos y seminuevos con garantía y accesorios originales.
+      </p>
+
+      <h3>Ventajas de comprar con nosotros</h3>
+      <!-- h3: subtítulo dentro de una sección -->
+
+      <ul>
+        <!-- ul: lista con viñetas -->
+        <li>Garantía por escrito</li>
+        <!-- li: cada elemento de la lista -->
+        <li>Facturación disponible</li>
+        <li>Asesoría personalizada</li>
+      </ul>
+    </section>
+
+    <section id="catalogo">
+      <h2>Catálogo</h2>
+
+      <table>
+        <!-- table: crea una tabla -->
+        <thead>
+          <!-- thead: parte superior (encabezado) de la tabla -->
+          <tr>
+            <!-- tr: una fila de la tabla -->
+            <th>Modelo</th>
+            <!-- th: celda de encabezado (texto en negritas) -->
+            <th>Almacenamiento</th>
+            <th>Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- tbody: cuerpo de la tabla, donde van los datos -->
+          <tr>
+            <td>iPhone 15</td>
+            <!-- td: celda normal con un dato -->
+            <td>128 GB</td>
+            <td>$14,999</td>
+          </tr>
+          <tr>
+            <td>iPhone 16</td>
+            <td>128 GB</td>
+            <td>$18,499</td>
+          </tr>
+          <tr>
+            <td>iPhone 16 Pro</td>
+            <td>256 GB</td>
+            <td>$26,999</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="contactos">
+      <h2>Contactos</h2>
+
+      <p>Teléfono: (656) 000-0000</p>
+      <p>Correo: contacto@istore.com</p>
+      <p>Horario: lunes a sábado, 10:00 a.m. a 8:00 p.m.</p>
+
+      <button type="button" id="botonContacto" onclick="mostrarFormulario()">Contáctanos</button>
+      <!-- button: botón. type="button": no envía nada por sí solo.
+           onclick: ejecuta la función de JavaScript cuando se hace clic -->
+
+      <form id="formularioContacto" style="display: none;" onsubmit="enviarFormulario(event)">
+        <!-- form: formulario. style="display: none;": está oculto hasta presionar el botón.
+             onsubmit: ejecuta una función al enviarlo (no se conecta a ninguna base de datos) -->
+
+        <h3>Escríbenos</h3>
+
+        <p>
+          <label for="nombre">Nombre:</label>
+          <!-- label: texto que describe el campo. for="nombre": lo une con el input que tiene ese id -->
+          <input type="text" id="nombre" required>
+          <!-- input: campo de texto. type="text": tipo texto. required: obligatorio -->
+        </p>
+
+        <p>
+          <label for="correo">Correo:</label>
+          <input type="email" id="correo" required>
+          <!-- type="email": revisa que el texto tenga formato de correo -->
+        </p>
+
+        <p>
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" rows="4" required></textarea>
+          <!-- textarea: campo de texto grande. rows="4": alto de 4 renglones -->
+        </p>
+
+        <button type="submit">Enviar</button>
+        <!-- type="submit": envía el formulario -->
+        <button type="button" onclick="ocultarFormulario()">Cancelar</button>
+      </form>
+
+      <p id="confirmacion"></p>
+      <!-- Aquí aparece el mensaje de confirmación después de enviar -->
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <!-- footer: pie de página, normalmente lleva derechos de autor y datos del autor -->
+
+    <p>&copy; 2026 iStore. Todos los derechos reservados.</p>
+    <!-- &copy; : código HTML que muestra el símbolo © -->
+
+    <p>Castro López Emmanuel &ndash; Número de control: 0827</p>
+    <!-- &ndash; : código HTML que muestra un guion largo (–) -->
+  </footer>
+
+  <script>
+    // script: aquí va el código JavaScript que da funcionalidad al botón y al formulario
+
+    // Muestra el formulario y oculta el botón
+    function mostrarFormulario() {
+      document.getElementById("formularioContacto").style.display = "block";
+      document.getElementById("botonContacto").style.display = "none";
+      document.getElementById("confirmacion").textContent = "";
+    }
+
+    // Oculta el formulario y vuelve a mostrar el botón
+    function ocultarFormulario() {
+      document.getElementById("formularioContacto").style.display = "none";
+      document.getElementById("botonContacto").style.display = "inline-block";
+    }
+
+    // Al enviar, evita que la página se recargue y muestra un mensaje de agradecimiento
+    function enviarFormulario(evento) {
+      evento.preventDefault();
+      var nombre = document.getElementById("nombre").value;
+      document.getElementById("formularioContacto").reset();
+      ocultarFormulario();
+      document.getElementById("confirmacion").textContent =
+        "Gracias, " + nombre + ". Tu mensaje fue recibido.";
+    }
+  </script>
+
+</body>
+</html>
