@@ -1,0 +1,22 @@
+<!DOCTYPE html> <!-- Documento HTML5 -->
+<html lang="es">
+<head>
+<meta charset="UTF-8"> <!-- Acentos y ñ -->
+<title>Formulario para contraseñas</title> <!-- Titulo de la pestaña -->
+</head>
+<body> <!-- Contenido visible -->
+<h2>Formulario para contraseñas</h2>
+<form action="" method="post">
+Ingresa tu usuario:
+<!-- Campo de texto normal -->
+<input type="text" name="usuario">
+Ingresa tu contraseña:
+<!-- password: oculta lo que se escribe -->
+<input type="password" name="pass">
+<br>
+<input type="submit" value="enviar">
+<!-- reset: borra todos los campos -->
+<input type="reset" value="borrar">
+</form>
+</body>
+</html>
