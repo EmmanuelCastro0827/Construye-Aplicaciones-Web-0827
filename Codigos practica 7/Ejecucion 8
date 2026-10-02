@@ -1,0 +1,23 @@
+<!DOCTYPE html> <!-- Documento HTML5 -->
+<html lang="es">
+<head>
+<meta charset="UTF-8"> <!-- Acentos y ñ -->
+<title>Formulario con archivos</title> <!-- Titulo de la pestaña -->
+<!-- Libreria de iconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/7.3.1/css/all.min.css">
+</head>
+<body> <!-- Contenido visible -->
+<h2>Formulario con archivos</h2>
+<form action="" method="post">
+Ingresa tu nombre:
+<input type="text" name="nombre">
+<br>
+<!-- file: boton para seleccionar un archivo -->
+<input type="file" name="archivo">
+<br>
+<!-- button: boton con texto e icono (Font Awesome) -->
+<button type="submit">Enviar <i class="fa-regular fa-paper-plane"></i></button>
+<button type="reset">Borrar <i class="fa fa-trash"></i></button>
+</form>
+</body>
+</html>
