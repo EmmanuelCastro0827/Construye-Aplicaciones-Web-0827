@@ -1,0 +1,39 @@
+<!DOCTYPE html> <!-- Documento HTML5 -->
+<html lang="es">
+<head>
+<meta charset="UTF-8"> <!-- Acentos y ñ -->
+<title>Formularios con agrupamiento</title> <!-- Titulo de la pestaña -->
+<!-- Libreria de iconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/7.3.1/css/all.min.css">
+</head>
+<body> <!-- Contenido visible -->
+<h2>Formularios con agrupamiento</h2>
+<form action="" method="post">
+<!-- fieldset: recuadro que agrupa campos; legend: titulo del grupo -->
+<fieldset>
+<legend>Datos personales</legend>
+Nombre y apellido:
+<input type="text" name="nombre_apellido"><br>
+Documento valido:
+<input type="file" name="documento"><br>
+Fecha de nacimiento:
+<!-- date: selector de fecha -->
+<input type="date" name="fecha_nacimiento">
+</fieldset>
+<!-- Segundo grupo -->
+<fieldset>
+<legend>Datos de estudio:</legend>
+Nombre de la escuela:
+<input type="text" name="escuela"><br>
+Certificado valido:
+<input type="file" name="certificado"><br>
+Fecha de egreso:
+<input type="date" name="fecha_egreso">
+</fieldset>
+<br>
+<!-- button: boton con texto e icono (Font Awesome) -->
+<button type="submit">Enviar <i class="fa-regular fa-paper-plane"></i></button>
+<button type="reset">Borrar <i class="fa fa-trash"></i></button>
+</form>
+</body>
+</html>
