@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!-- DOCTYPE: le dice al navegador que este documento es HTML5 -->
+<html lang="es">
+<!-- html: etiqueta raíz que envuelve toda la página. lang="es" indica que el idioma es español -->
+
+<head>
+  <!-- head: contiene información de la página que NO se muestra en pantalla -->
+  <meta charset="UTF-8">
+  <!-- meta charset: permite mostrar acentos y la letra ñ correctamente -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- meta viewport: hace que la página se ajuste al ancho de celulares -->
+  <title>iStore - Tienda de iPhone</title>
+  <!-- title: texto que aparece en la pestaña del navegador -->
+</head>
+
+<body>
+  <!-- body: contiene todo lo que SÍ se ve en la página -->
+
+  <!-- ===================== ENCABEZADO ===================== -->
+  <header>
+    <!-- header: zona superior de la página (logo y título) -->
+    <h1>iStore</h1>
+    <!-- h1: título principal (el más grande, solo se usa uno) -->
+    <p>Tu tienda de iPhone nuevos y seminuevos con garantía</p>
+    <!-- p: párrafo de texto -->
+  </header>
+
+  <hr>
+  <!-- hr: línea horizontal que separa partes de la página -->
+
+  <!-- ================= BARRA DE NAVEGACIÓN ================ -->
+  <nav>
+    <!-- nav: agrupa los enlaces principales del sitio -->
+    <a href="#inicio">Inicio</a> |
+    <!-- a: enlace. href="#inicio" lleva a la sección que tiene id="inicio" -->
+    <a href="#catalogo">Catálogo</a> |
+    <a href="#servicios">Servicios</a> |
+    <a href="#contactos">Contactos</a>
+  </nav>
+
+  <hr>
+
+  <!-- ======================= CUERPO ======================= -->
+  <main>
+    <!-- main: contenido principal de la página -->
+
+    <section id="inicio">
+      <!-- section: bloque de contenido. id: nombre único para que el enlace de la barra lo encuentre -->
+      <h2>Bienvenido</h2>
+      <!-- h2: título de segundo nivel -->
+      <p>
+        Somos una tienda especializada en iPhone. Revisa nuestro catálogo,
+        conoce nuestros servicios y contáctanos.
+      </p>
+      <ul>
+        <!-- ul: lista con viñetas -->
+        <li>Equipos revisados y con garantía</li>
+        <!-- li: cada elemento de la lista -->
+        <li>Facturación disponible</li>
+        <li>Asesoría antes y después de tu compra</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section id="catalogo">
+      <h2>Catálogo de iPhone</h2>
+      <table border="1" cellpadding="6" cellspacing="0">
+        <!-- table: crea una tabla.
+             border="1": muestra el borde de las celdas.
+             cellpadding="6": espacio dentro de cada celda.
+             cellspacing="0": quita el espacio entre celdas. -->
+        <caption>Precios de ejemplo</caption>
+        <!-- caption: título de la tabla -->
+        <thead>
+          <!-- thead: encabezado de la tabla -->
+          <tr>
+            <!-- tr: fila de la tabla -->
+            <th>Modelo</th>
+            <!-- th: celda de encabezado (en negritas y centrada) -->
+            <th>Almacenamiento</th>
+            <th>Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- tbody: cuerpo de la tabla con los datos -->
+          <tr>
+            <td>iPhone 14</td>
+            <!-- td: celda normal con datos -->
+            <td>128 GB</td>
+            <td>$9,500</td>
+          </tr>
+          <tr>
+            <td>iPhone 15</td>
+            <td>128 GB</td>
+            <td>$14,999</td>
+          </tr>
+          <tr>
+            <td>iPhone 16</td>
+            <td>128 GB</td>
+            <td>$18,499</td>
+          </tr>
+          <tr>
+            <td>iPhone 16 Pro</td>
+            <td>256 GB</td>
+            <td>$26,999</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr>
+
+    <section id="servicios">
+      <h2>Servicios</h2>
+      <ol>
+        <!-- ol: lista numerada -->
+        <li>Cambio de pantalla</li>
+        <li>Cambio de batería</li>
+        <li>Transferencia de datos</li>
+      </ol>
+    </section>
+
+    <hr>
+
+    <section id="contactos">
+      <h2>Contactos</h2>
+      <p><strong>Teléfono:</strong> (656) 000-0000</p>
+      <!-- strong: texto en negritas -->
+      <p><strong>Correo:</strong> contacto@istore.com</p>
+      <p><strong>Dirección:</strong> Calle Ejemplo #123, Col. Centro</p>
+
+      <h3>Déjanos tus datos</h3>
+      <!-- h3: título de tercer nivel -->
+
+      <form id="formularioContacto" onsubmit="enviarFormulario(event)">
+        <!-- form: formulario donde se escribe la información.
+             onsubmit: ejecuta una función al presionar "Enviar" -->
+
+        <p>
+          <label for="nombre">Nombre:</label><br>
+          <!-- label: texto que describe el campo. for: lo une con el input que tenga ese id.
+               br: salto de línea -->
+          <input type="text" id="nombre" placeholder="Escribe tu nombre" required>
+          <!-- input: campo para escribir. type="text" = texto.
+               placeholder: texto de ayuda dentro del campo. required = obligatorio -->
+        </p>
+
+        <p>
+          <label for="correo">Correo:</label><br>
+          <input type="email" id="correo" placeholder="ejemplo@correo.com" required>
+          <!-- type="email": exige que el texto tenga formato de correo -->
+        </p>
+
+        <p>
+          <label for="telefono">Teléfono:</label><br>
+          <input type="tel" id="telefono" placeholder="656 000 0000">
+          <!-- type="tel": campo para número de teléfono (no es obligatorio) -->
+        </p>
+
+        <p>
+          <label for="asunto">Asunto:</label><br>
+          <select id="asunto">
+            <!-- select: lista desplegable -->
+            <option>Cotizar un iPhone</option>
+            <!-- option: cada opción de la lista -->
+            <option>Reparación</option>
+            <option>Otro</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="mensaje">Mensaje:</label><br>
+          <textarea id="mensaje" rows="4" cols="40" placeholder="Escribe tu mensaje" required></textarea>
+          <!-- textarea: cuadro de texto grande. rows = renglones visibles, cols = ancho en caracteres -->
+        </p>
+
+        <button type="submit">Enviar</button>
+        <!-- button type="submit": envía el formulario -->
+        <button type="reset">Borrar</button>
+        <!-- button type="reset": limpia todos los campos -->
+      </form>
+
+      <p id="confirmacion"></p>
+      <!-- Aquí se mostrará el mensaje de agradecimiento -->
+    </section>
+
+  </main>
+
+  <hr>
+
+  <!-- ===================== PIE DE PÁGINA ==================== -->
+  <footer>
+    <!-- footer: zona inferior de la página (derechos, autor, datos finales) -->
+    <p>&copy; 2026 iStore. Todos los derechos reservados.</p>
+    <!-- &copy; : código especial que muestra el símbolo © -->
+    <p>Castro López Emmanuel - Número de control: 0827</p>
+  </footer>
+
+  <script>
+    // script: aquí va el JavaScript, que hace que la página reaccione a acciones
+
+    // Al enviar: no manda datos a ningún servidor, solo muestra un agradecimiento
+    function enviarFormulario(evento) {
+      evento.preventDefault();  // evita que la página se recargue
+      var nombre = document.getElementById("nombre").value;
+      document.getElementById("formularioContacto").reset();  // limpia los campos
+      document.getElementById("confirmacion").textContent =
+        "Gracias, " + nombre + ". Tu mensaje fue recibido.";
+    }
+  </script>
+
+</body>
+</html>
