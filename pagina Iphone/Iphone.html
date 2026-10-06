@@ -6,7 +6,19 @@
   <meta charset="UTF-8">
   <!-- meta charset: permite ver acentos y la ñ -->
   <title>iStore - Tienda de iPhone</title>
-  <!-- title: texto que aparece en la pestaña del navegador -->
+  <!-- title: texto de la pestaña del navegador -->
+  <style>
+    /* style: aquí va el CSS básico de la página */
+    body { font-family: Arial; margin: 0; background: #f2f2f7; }      /* letra, sin margen y fondo gris */
+    header, footer { background: #1d1d1f; color: white; text-align: center; padding: 20px; }  /* encabezado y pie oscuros */
+    nav { background: #0071e3; text-align: center; padding: 10px; }   /* barra azul */
+    nav a { color: white; margin: 0 10px; text-decoration: none; }    /* enlaces blancos sin subrayado */
+    main { background: white; width: 80%; margin: 20px auto; padding: 20px; }  /* cuerpo blanco y centrado */
+    h2 { color: #0071e3; }                                            /* títulos azules */
+    table { border-collapse: collapse; width: 100%; }                 /* tabla a todo el ancho */
+    th, td { border: 1px solid gray; padding: 6px; }                  /* bordes de las celdas */
+    th { background: #0071e3; color: white; }                         /* títulos de la tabla */
+  </style>
 </head>
 <body>
 <!-- body: todo lo que se ve en la página -->
@@ -20,12 +32,11 @@
 </header>
 
 <nav>
-  <!-- nav: barra de navegación con los enlaces -->
-  <a href="#inicio">Inicio</a> |
-  <!-- a: enlace. href="#inicio" lleva a la parte que tenga id="inicio" -->
-  <a href="#catalogo">Catálogo</a> |
-  <a href="#accesorios">Accesorios</a> |
-  <a href="#servicios">Servicios</a> |
+  <!-- nav: barra de navegación -->
+  <a href="#inicio">Inicio</a>
+  <!-- a: enlace. href="#inicio" lleva al elemento con id="inicio" -->
+  <a href="#catalogo">Catálogo</a>
+  <a href="#servicios">Servicios</a>
   <a href="#contactos">Contactos</a>
 </nav>
 
@@ -33,155 +44,39 @@
   <!-- main: cuerpo principal de la página -->
   <h2 id="inicio">Bienvenido</h2>
   <!-- h2: título secundario. id: nombre para que el enlace lo encuentre -->
-  <p>Somos una tienda especializada en iPhone con más de 5 años de experiencia. Aquí puedes comprar equipos nuevos y seminuevos, accesorios originales y recibir ayuda con tu celular.</p>
-  <p>Todos los equipos pasan por una revisión de pantalla, batería, cámaras y bocinas antes de salir a la venta.</p>
-  <p>Contamos con garantía por escrito, factura y diferentes formas de pago: efectivo, tarjeta y transferencia.</p>
+  <p>Somos una tienda especializada en iPhone. Todos los equipos tienen garantía y puedes pedir factura.</p>
 
   <h2 id="catalogo">Catálogo de iPhone</h2>
-  <p>Estos son los modelos que tenemos disponibles (precios de ejemplo):</p>
-  <table border="1">
-    <!-- table: tabla. border="1": muestra el borde -->
-    <tr>
-      <!-- tr: fila de la tabla -->
-      <th>Modelo</th>
-      <!-- th: celda de título (negritas) -->
-      <th>Almacenamiento</th>
-      <th>Colores</th>
-      <th>Estado</th>
-      <th>Garantía</th>
-      <th>Precio</th>
-    </tr>
-    <tr>
-      <td>iPhone 13</td>
-      <!-- td: celda con datos -->
-      <td>128 GB</td>
-      <td>Negro, Azul, Rosa</td>
-      <td>Seminuevo</td>
-      <td>3 meses</td>
-      <td>$7,800</td>
-    </tr>
-    <tr>
-      <td>iPhone 14</td>
-      <td>128 GB</td>
-      <td>Medianoche, Azul</td>
-      <td>Seminuevo</td>
-      <td>3 meses</td>
-      <td>$9,500</td>
-    </tr>
-    <tr>
-      <td>iPhone 14 Pro</td>
-      <td>256 GB</td>
-      <td>Negro, Morado</td>
-      <td>Seminuevo</td>
-      <td>3 meses</td>
-      <td>$14,500</td>
-    </tr>
-    <tr>
-      <td>iPhone 15</td>
-      <td>128 GB</td>
-      <td>Negro, Azul, Rosa</td>
-      <td>Nuevo</td>
-      <td>1 año</td>
-      <td>$14,999</td>
-    </tr>
-    <tr>
-      <td>iPhone 15 Pro</td>
-      <td>256 GB</td>
-      <td>Titanio natural, Negro</td>
-      <td>Nuevo</td>
-      <td>1 año</td>
-      <td>$22,999</td>
-    </tr>
-    <tr>
-      <td>iPhone 16</td>
-      <td>128 GB</td>
-      <td>Negro, Blanco, Verde</td>
-      <td>Nuevo</td>
-      <td>1 año</td>
-      <td>$18,499</td>
-    </tr>
-    <tr>
-      <td>iPhone 16 Pro</td>
-      <td>256 GB</td>
-      <td>Titanio natural, Negro</td>
-      <td>Nuevo</td>
-      <td>1 año</td>
-      <td>$26,999</td>
-    </tr>
-    <tr>
-      <td>iPhone 16 Pro Max</td>
-      <td>512 GB</td>
-      <td>Titanio desierto, Negro</td>
-      <td>Nuevo</td>
-      <td>1 año</td>
-      <td>$34,999</td>
-    </tr>
-  </table>
-
-  <h2 id="accesorios">Accesorios</h2>
-  <p>También vendemos accesorios para tu iPhone:</p>
-  <table border="1">
-    <tr>
-      <th>Producto</th>
-      <th>Descripción</th>
-      <th>Precio</th>
-    </tr>
-    <tr>
-      <td>Funda de silicón</td>
-      <td>Disponible en varios colores</td>
-      <td>$450</td>
-    </tr>
-    <tr>
-      <td>Mica de cristal</td>
-      <td>Protege la pantalla, instalación incluida</td>
-      <td>$250</td>
-    </tr>
-    <tr>
-      <td>Cargador 20W</td>
-      <td>Carga rápida USB-C</td>
-      <td>$550</td>
-    </tr>
-    <tr>
-      <td>Cable USB-C</td>
-      <td>1 metro de largo</td>
-      <td>$350</td>
-    </tr>
-    <tr>
-      <td>AirPods</td>
-      <td>Audífonos inalámbricos</td>
-      <td>$3,200</td>
-    </tr>
+  <table>
+    <!-- table: tabla -->
+    <tr><th>Modelo</th><th>Almacenamiento</th><th>Estado</th><th>Precio</th></tr>
+    <!-- tr: fila. th: celda de título -->
+    <tr><td>iPhone 13</td><td>128 GB</td><td>Seminuevo</td><td>$7,800</td></tr>
+    <!-- td: celda con datos -->
+    <tr><td>iPhone 14</td><td>128 GB</td><td>Seminuevo</td><td>$9,500</td></tr>
+    <tr><td>iPhone 15</td><td>128 GB</td><td>Nuevo</td><td>$14,999</td></tr>
+    <tr><td>iPhone 16</td><td>128 GB</td><td>Nuevo</td><td>$18,499</td></tr>
+    <tr><td>iPhone 16 Pro</td><td>256 GB</td><td>Nuevo</td><td>$26,999</td></tr>
   </table>
 
   <h2 id="servicios">Servicios</h2>
-  <p>Cambio de pantalla: reparamos pantallas rotas o que no responden al tacto.</p>
-  <p>Cambio de batería: si tu iPhone ya no dura, le ponemos una batería nueva el mismo día.</p>
-  <p>Transferencia de datos: pasamos tus fotos, contactos y aplicaciones a tu nuevo iPhone.</p>
-  <p>Compra de equipos usados: te damos un precio por tu iPhone anterior.</p>
+  <p>Cambio de pantalla, cambio de batería y transferencia de datos.</p>
 
   <h2 id="contactos">Contactos</h2>
   <p>Teléfono: (656) 000-0000</p>
-  <p>WhatsApp: 656 000 0000</p>
   <p>Correo: contacto@istore.com</p>
-  <p>Dirección: Calle Ejemplo #123, Col. Centro</p>
-  <p>Horario: lunes a sábado de 10:00 a.m. a 8:00 p.m.</p>
-
-  <h3>Déjanos tus datos</h3>
-  <!-- h3: título de tercer nivel -->
   <form action="#" method="post">
     <!-- form: formulario. action: a dónde se envían los datos. method="post": cómo viajan -->
     <p>Nombre: <input type="text" name="nombre"></p>
-    <!-- input type="text": campo de texto. name: nombre del dato -->
+    <!-- input type="text": campo de texto -->
     <p>Correo: <input type="email" name="correo"></p>
-    <!-- input type="email": campo de correo (debe llevar @) -->
+    <!-- input type="email": campo de correo -->
     <p>Comentarios: <textarea name="comentarios" rows="4" cols="30"></textarea></p>
-    <!-- textarea: cuadro de texto grande. rows: renglones, cols: ancho -->
-    <p>
-      <input type="submit" value="Enviar">
-      <!-- type="submit": botón que envía el formulario -->
-      <input type="reset" value="Borrar">
-      <!-- type="reset": botón que borra lo escrito -->
-    </p>
+    <!-- textarea: cuadro de texto grande -->
+    <input type="submit" value="Enviar">
+    <!-- type="submit": botón que envía -->
+    <input type="reset" value="Borrar">
+    <!-- type="reset": botón que borra -->
   </form>
 </main>
 
@@ -190,6 +85,7 @@
 
 <footer>
   <!-- footer: pie de la página -->
+  <p>iStore - Todos los derechos reservados</p>
   <p>Castro López Emmanuel - Número de control: 0827</p>
 </footer>
 
