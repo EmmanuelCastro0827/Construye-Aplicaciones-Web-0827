@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Universidad Ejemplo | Campus Cd. Juárez</title>
+<style>
+  :root{
+    --morado:#52246f;
+    --morado-osc:#451b62;
+    --dorado:#b8955a;
+    --texto:#333;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Source Sans Pro","Segoe UI",Roboto,Arial,sans-serif;color:var(--texto);background:#fff}
+  a{text-decoration:none;color:inherit}
+
+  /* Barra superior */
+  .topbar{background:var(--morado);height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 310px;border-bottom:1px solid rgba(255,255,255,.12);position:relative;z-index:5}
+  .topbar .links{display:flex;gap:0}
+  .topbar .links a{color:#fff;font-size:13px;font-weight:700;text-transform:uppercase;padding:0 12px;display:flex;align-items:center;gap:6px}
+  .topbar .social{display:flex}
+  .topbar .social span{color:#fff;width:41px;height:44px;display:flex;align-items:center;justify-content:center;font-size:14px;border-left:1px solid rgba(255,255,255,.12)}
+
+  /* Header / nav */
+  header{background:var(--morado);position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(255,255,255,.15)}
+  .nav{height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 30px}
+  .logo{color:#fff;line-height:1}
+  .logo b{display:block;font-size:34px;font-weight:900;letter-spacing:1px;border-bottom:3px solid #fff;padding-bottom:2px}
+  .logo small{font-size:11px;letter-spacing:.5px}
+  nav ul{list-style:none;display:flex;gap:0}
+  nav a{display:block;color:#fff;font-size:19px;font-weight:600;letter-spacing:.5px;padding:0 36px;cursor:pointer;line-height:70px}
+  nav a.active,nav a:hover{color:#e8d3a6}
+  nav ul{padding-right:40px}
+
+  /* Hero */
+  .hero{background:linear-gradient(rgba(82,36,111,.82),rgba(82,36,111,.82)),repeating-linear-gradient(90deg,#7b5a92 0 60px,#6a4a80 60px 120px);height:335px;display:flex;align-items:center;padding-left:305px}
+  .hero h1{color:#fff;font-size:62px;font-weight:700;letter-spacing:-1px}
+
+  /* Vistas */
+  .view{display:none}
+  .view.show{display:block}
+
+  /* Inicio: modalidad */
+  .modalidad{text-align:center;padding:50px 0 120px}
+  .modalidad h2{color:var(--dorado);font-size:60px;font-weight:700;margin-bottom:38px}
+  .cards{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+  .card{width:310px;height:191px;background:var(--morado);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;transition:.2s}
+  .card:hover{background:var(--morado-osc);transform:translateY(-3px)}
+  .card .ico{font-size:52px;line-height:1}
+  .card span.t{font-size:36px;font-weight:700}
+  hr.sep{width:1296px;max-width:90%;margin:0 auto;border:0;border-top:1px solid #ddd;margin-top:-50px;margin-bottom:60px}
+
+  /* Licenciaturas */
+  .selector{text-align:center;padding:90px 0 40px}
+  .selector h2{color:var(--morado);font-size:46px;font-weight:700;letter-spacing:-1.5px;margin-bottom:34px;text-transform:uppercase}
+  .tabs{display:flex;justify-content:center;gap:12px;margin-bottom:26px;flex-wrap:wrap}
+  .tabs button{font-family:Roboto,Arial,sans-serif;font-size:32px;color:var(--morado);background:transparent;border:0;padding:8px 17px;border-radius:5px;cursor:pointer}
+  .tabs button.on{background:var(--morado);color:#fff}
+  .grid{width:1296px;max-width:94%;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px 44px;padding-bottom:70px}
+  .lic{position:relative;overflow:hidden;background:var(--morado-osc);color:#fff;font-family:Roboto,Arial,sans-serif;font-size:24px;text-align:center;height:63px;line-height:63px;border-radius:3px;cursor:pointer;transition:.2s}
+  .lic:hover{background:var(--morado)}
+  .lic.nueva{background:linear-gradient(90deg,#b5761f,#7a4a10)}
+  .lic.nueva::before{content:"NUEVA";position:absolute;left:-34px;top:12px;width:170px;height:30px;line-height:30px;background:#2e2008;color:#e8d3a6;font-size:20px;font-weight:900;letter-spacing:1px;transform:rotate(-30deg);text-align:center}
+
+  /* Footer */
+  footer{background:var(--morado)}
+  .foot{width:1300px;max-width:96%;margin:0 auto;padding:110px 0 150px;display:grid;grid-template-columns:230px 250px repeat(3,1fr);color:#fff;font-size:17px;line-height:1.1;gap:10px}
+  .foot .logo b{font-size:56px}
+  .foot .logo small{font-size:17px}
+  .foot ul{list-style:none;line-height:26px}
+  .foot ul li::before{content:"› ";font-weight:900}
+  .foot h4{font-size:17px;text-transform:uppercase;margin-bottom:2px}
+  .foot .col p{margin-bottom:28px;text-align:center}
+  .copy{background:var(--dorado);color:#fff;text-align:center;font-size:15px;padding:44px 0}
+  .copy a{color:#e7c9f5}
+
+  /* Flotantes */
+  .wa{position:fixed;left:22px;bottom:30px;display:flex;align-items:center;gap:10px;z-index:20}
+  .wa i{width:50px;height:50px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;color:#fff;font-style:normal;font-size:26px}
+  .wa span{background:#fff;padding:7px 11px;border-radius:5px;font-size:14px;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+  .up{position:fixed;right:30px;bottom:30px;width:40px;height:40px;background:#9a9a9a;color:#fff;display:none;align-items:center;justify-content:center;cursor:pointer;z-index:20}
+
+  @media(max-width:1100px){
+    .topbar{padding:0 12px}
+    .nav{flex-direction:column;height:auto;padding:10px}
+    nav ul{flex-wrap:wrap;justify-content:center;padding:0}
+    nav a{padding:0 18px;line-height:44px;font-size:17px}
+    .hero{padding-left:24px;height:240px}.hero h1{font-size:40px}
+    .modalidad h2{font-size:40px}
+    .grid{grid-template-columns:1fr}
+    .tabs button{font-size:22px}
+    .foot{grid-template-columns:1fr 1fr;padding:50px 0}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="links">
+    <a>➜] Acceso</a><a>✉ Chihuahua</a><a>✉ Juárez</a>
+  </div>
+  <div class="social"><span>f</span><span>◎</span><span>✆</span><span>✉</span></div>
+</div>
+
+<header>
+  <div class="nav">
+    <div class="logo"><b>UEJ</b><small>UNIVERSIDAD EJEMPLO</small></div>
+    <nav>
+      <ul>
+        <li><a id="n-inicio" class="active" onclick="ir('inicio')">Inicio</a></li>
+        <li><a id="n-lic" onclick="ir('lic')">Licenciaturas</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ INICIO ============ -->
+<section id="inicio" class="view show">
+  <div class="hero"><h1>Campus Cd. Juárez</h1></div>
+  <div class="modalidad">
+    <h2>Modalidad:</h2>
+    <div class="cards">
+      <div class="card" onclick="ir('lic','Escolarizada')"><div class="ico">💻</div><span class="t">Escolarizada</span></div>
+      <div class="card" onclick="ir('lic','DIES')"><div class="ico">🏫</div><span class="t">Dies</span></div>
+      <div class="card" onclick="ir('lic','Sabatino')"><div class="ico">📅</div><span class="t">Sabatino</span></div>
+      <div class="card" onclick="ir('lic','Virtual')"><div class="ico">🖥️</div><span class="t">Virtual</span></div>
+    </div>
+  </div>
+  <hr class="sep">
+</section>
+
+<!-- ============ LICENCIATURAS ============ -->
+<section id="lic" class="view">
+  <div class="hero"><h1>Licenciaturas</h1></div>
+  <div class="selector">
+    <h2>Selecciona tu modalidad:</h2>
+    <div class="tabs" id="tabs">
+      <button class="on">Escolarizada</button>
+      <button>Virtual</button>
+      <button>Sabatino</button>
+      <button>Ejecutiva</button>
+      <button>DIES</button>
+    </div>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot">
+    <div class="logo"><b>UEJ</b><small>UNIVERSIDAD EJEMPLO</small></div>
+    <ul>
+      <li><a onclick="ir('inicio')" style="cursor:pointer">Inicio</a></li>
+      <li><a onclick="ir('lic')" style="cursor:pointer">Licenciaturas</a></li>
+    </ul>
+    <div class="col">
+      <h4>Chihuahua</h4>
+      <p>Calle Ejemplo No. 1234<br>Col. Centro<br>(614) 000-00-00</p>
+      <h4>Cd. Juárez</h4>
+      <p>Av. Ejemplo No. 5678<br>Col. Centro<br>(656) 000-00-00</p>
+    </div>
+    <div class="col">
+      <h4>Nuevo Casas Grandes</h4>
+      <p>Calle Ejemplo No. 910<br>Col. Centro<br>(636) 000-00-00</p>
+      <h4>Cuauhtémoc</h4>
+      <p>Carretera Ejemplo Km. 2<br>Parque Industrial<br>(625) 000-00-00</p>
+    </div>
+    <div class="col">
+      <h4>Parral</h4>
+      <p>Perimetral Ejemplo<br>Col. Centro<br>(627) 000-00-00</p>
+      <h4>Delicias</h4>
+      <p>Calle Ejemplo No. 711<br>Col. Centro<br>(639) 000-00-00</p>
+    </div>
+  </div>
+  <div class="copy">© 2026 Universidad Ejemplo. Todos los derechos reservados</div>
+</footer>
+
+<div class="wa"><i>✆</i><span>Envíanos un mensaje</span></div>
+<div class="up" id="up" onclick="window.scrollTo({top:0,behavior:'smooth'})">⌃</div>
+
+<script>
+  const nuevas = ["Psicología","Diseño Gráfico","Contaduría Pública"];
+  const izq = ["Psicología","Diseño Gráfico","Contaduría Pública","Administración de empresas","Administración Financiera","Administración de Seguros y Fianzas","Comercio exterior","Ciencias de la comunicación","Creación y desarrollo de empresas","Derecho"];
+  const der = ["Nutrición","Gastronomía","Ventas y Negocios Digitales","Diseño de Imagen Personal","Ingeniería industrial en calidad y productividad","Ingeniería industrial en estadística aplicada","Negocios internacionales","Producción y organización de eventos","Turismo","Aviación"];
+
+  // Programas por modalidad (ejemplo; edítalos a tu gusto)
+  const datos = {
+    "Escolarizada": null, // lista completa
+    "Virtual":  ["Administración de empresas","Contaduría Pública","Derecho","Ventas y Negocios Digitales","Negocios internacionales","Ciencias de la comunicación"],
+    "Sabatino": ["Administración de empresas","Administración Financiera","Derecho","Contaduría Pública","Psicología","Turismo"],
+    "Ejecutiva":["Administración de empresas","Creación y desarrollo de empresas","Comercio exterior","Negocios internacionales"],
+    "DIES":     ["Derecho","Administración de empresas","Psicología","Nutrición","Gastronomía","Diseño Gráfico"]
+  };
+
+  function pintar(mod){
+    let lista;
+    if(!datos[mod]){
+      // intercala izquierda/derecha para conservar el orden visual de 2 columnas
+      lista=[]; for(let i=0;i<izq.length;i++){lista.push(izq[i]);lista.push(der[i]);}
+    } else lista = datos[mod];
+    document.getElementById('grid').innerHTML = lista.map(n =>
+      `<div class="lic ${nuevas.includes(n)?'nueva':''}">${n}</div>`).join('');
+    document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on', b.textContent===mod));
+  }
+  document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>pintar(b.textContent));
+
+  function ir(vista, mod){
+    document.querySelectorAll('.view').forEach(v=>v.classList.remove('show'));
+    document.getElementById(vista).classList.add('show');
+    document.getElementById('n-inicio').classList.toggle('active', vista==='inicio');
+    document.getElementById('n-lic').classList.toggle('active', vista==='lic');
+    document.title = vista==='inicio' ? 'Universidad Ejemplo | Campus Cd. Juárez' : 'Universidad Ejemplo | Licenciaturas';
+    if(vista==='lic') pintar(mod||'Escolarizada');
+    window.scrollTo(0,0);
+  }
+
+  window.addEventListener('scroll',()=>{
+    document.getElementById('up').style.display = window.scrollY>300 ? 'flex':'none';
+  });
+  pintar('Escolarizada');
+</script>
+</body>
+</html>
