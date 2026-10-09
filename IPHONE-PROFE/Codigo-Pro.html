@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="iStore: iPhone nuevos y seminuevos con garantía y factura.">
+<title>iStore - Tienda de iPhone</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;--soft:#f5f5f7;--card:#ffffff;--ink:#1d1d1f;--muted:#5f6368;--line:#e3e3e8;
+  --blue:#0071e3;--blue-ink:#ffffff;--dark:#1d1d1f;--dark-ink:#f5f5f7;--new:#0a7a3d;--newbg:#e6f4ec;--used:#8a5a00;--usedbg:#fbf0dc;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1012;--soft:#17181b;--card:#1c1d21;--ink:#f5f5f7;--muted:#a6a8ad;--line:#2d2f34;--blue:#4aa3ff;--blue-ink:#06121f;--dark:#17181b;--new:#5fd38d;--newbg:#12301f;--used:#e6b45c;--usedbg:#33270f;}}
+:root[data-theme="dark"]{--bg:#0f1012;--soft:#17181b;--card:#1c1d21;--ink:#f5f5f7;--muted:#a6a8ad;--line:#2d2f34;--blue:#4aa3ff;--blue-ink:#06121f;--dark:#17181b;--new:#5fd38d;--newbg:#12301f;--used:#e6b45c;--usedbg:#33270f;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;font-size:1.3rem;text-decoration:none;letter-spacing:-.03em}
+.bar nav{display:flex;align-items:center;gap:6px}
+.bar nav a{padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--muted);font-weight:600;font-size:.95rem}
+.bar nav a:hover{color:var(--ink);background:var(--soft)}
+.bar nav a.cta{background:var(--ink);color:var(--bg);margin-left:6px;padding:8px 16px;border-radius:999px}
+.bar nav a.cta:hover{opacity:.88;background:var(--ink)}
+
+.btn{display:inline-block;background:var(--blue);color:var(--blue-ink);padding:14px 28px;border-radius:999px;font:inherit;font-weight:700;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.small{padding:10px 18px;font-size:.92rem}
+
+.hero{padding:80px 0 72px;background:linear-gradient(180deg,var(--soft),var(--bg))}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2.5rem,6vw,4.4rem);line-height:1.03;letter-spacing:-.04em;font-weight:800;margin:0 0 20px}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:50ch;margin:0 0 32px}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap}
+.phone{width:230px;aspect-ratio:9/18.5;margin:0 auto;border-radius:42px;background:#2b2c30;padding:9px;box-shadow:0 40px 70px -30px rgba(0,0,0,.45),inset 0 0 0 2px #4a4b50;position:relative;transform:rotate(4deg)}
+.phone .screen{width:100%;height:100%;border-radius:34px;background:linear-gradient(160deg,#0071e3 0%,#5e5ce6 55%,#bf5af2 100%);position:relative;overflow:hidden}
+.phone .screen::before{content:"";position:absolute;top:10px;left:50%;width:34%;height:20px;border-radius:20px;background:#000;transform:translateX(-50%)}
+.phone .screen::after{content:"iStore";position:absolute;bottom:18%;left:0;right:0;text-align:center;color:#fff;font-weight:800;font-size:1.8rem;letter-spacing:-.03em}
+
+.trust{border-bottom:1px solid var(--line)}
+.trust .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-top:28px;padding-bottom:28px}
+.trust b{display:block}
+.trust span{color:var(--muted);font-size:.93rem}
+
+section{padding:80px 0}
+section.alt{background:var(--soft)}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.03em;line-height:1.1;margin:0 0 10px}
+.lead{color:var(--muted);margin:0 0 32px;max-width:58ch}
+
+.filters{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+.filters button{font:inherit;font-weight:600;padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column}
+.item[hidden]{display:none}
+.mini{width:56px;aspect-ratio:9/18.5;border-radius:12px;padding:3px;margin:6px auto 18px;background:#2b2c30}
+.mini i{display:block;height:100%;border-radius:9px}
+.c1 i{background:linear-gradient(160deg,#a8c5ff,#e8dcff)}
+.c2 i{background:linear-gradient(160deg,#ffb3c7,#ffe0b5)}
+.c3 i{background:linear-gradient(160deg,#7fd6c2,#c7f0a8)}
+.c4 i{background:linear-gradient(160deg,#4a4f6b,#9aa0c0)}
+.c5 i{background:linear-gradient(160deg,#3a3a3c,#8e8e93)}
+.item h3{margin:0;font-size:1.15rem;letter-spacing:-.01em}
+.item .spec{color:var(--muted);font-size:.93rem;margin:2px 0 10px}
+.badge{align-self:flex-start;font-size:.8rem;font-weight:700;padding:3px 10px;border-radius:999px}
+.badge.new{color:var(--new);background:var(--newbg)}
+.badge.used{color:var(--used);background:var(--usedbg)}
+.item .price{font-size:1.6rem;font-weight:800;letter-spacing:-.03em;margin:14px 0 16px}
+.item .btn{margin-top:auto;text-align:center}
+
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.service{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px}
+.service svg{width:34px;height:34px;stroke:var(--blue);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin-bottom:14px}
+.service h3{margin:0 0 6px;font-size:1.15rem}
+.service p{margin:0;color:var(--muted)}
+
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:56px}
+.contact dl{margin:0}
+.contact dt{font-weight:700;margin-top:16px}
+.contact dd{margin:0;color:var(--muted)}
+form{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px}
+label{display:block;font-weight:600;margin-bottom:16px}
+input[type=text],input[type=email],textarea{display:block;width:100%;margin-top:6px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
+textarea{resize:vertical}
+.actions{display:flex;gap:16px;align-items:center}
+.actions .link{background:none;border:0;color:var(--muted);font:inherit;cursor:pointer;text-decoration:underline}
+
+footer{background:var(--dark);color:var(--dark-ink);padding:48px 0 28px}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.14)}
+footer h4{margin:0 0 10px;font-size:.95rem}
+footer p,footer a{color:#b9bbc0;font-size:.93rem;margin:0 0 6px;display:block;text-decoration:none}
+footer a:hover{color:#fff}
+footer .logo{color:#fff;display:block;margin-bottom:8px}
+footer .legal{padding-top:20px;color:#b9bbc0;font-size:.9rem;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+
+@media (max-width:820px){
+  .hero .wrap,.contact,footer .cols{grid-template-columns:1fr}
+  .hero{padding:48px 0}
+  .phone{width:180px;margin-top:8px}
+  .trust .wrap{grid-template-columns:1fr;gap:14px}
+  section{padding:56px 0}
+  .bar nav a:not(.cta){display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="#inicio">iStore</a>
+    <nav aria-label="Principal">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contactos">Contacto</a>
+      <a class="cta" href="#contactos">Cotizar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero" id="inicio">
+    <div class="wrap">
+      <div>
+        <h1>iPhone con garantía, al precio justo.</h1>
+        <p>Somos una tienda especializada en iPhone nuevos y seminuevos. Todos los equipos tienen garantía y puedes pedir factura.</p>
+        <div class="row">
+          <a class="btn" href="#catalogo">Ver catálogo</a>
+          <a class="btn ghost" href="#contactos">Escríbenos</a>
+        </div>
+      </div>
+      <div class="phone" aria-hidden="true"><div class="screen"></div></div>
+    </div>
+  </div>
+
+  <div class="trust">
+    <div class="wrap">
+      <div><b>Garantía en todos los equipos</b><span>Nuevos y seminuevos</span></div>
+      <div><b>Factura disponible</b><span>Solicítala al comprar</span></div>
+      <div><b>Servicio técnico</b><span>Pantalla, batería y datos</span></div>
+    </div>
+  </div>
+
+  <section id="catalogo">
+    <div class="wrap">
+      <h2>Catálogo de iPhone</h2>
+      <p class="lead">Precios en pesos mexicanos. Pregunta por disponibilidad y colores.</p>
+      <div class="filters" role="group" aria-label="Filtrar por estado">
+        <button type="button" data-f="todos" aria-pressed="true">Todos</button>
+        <button type="button" data-f="Nuevo" aria-pressed="false">Nuevos</button>
+        <button type="button" data-f="Seminuevo" aria-pressed="false">Seminuevos</button>
+      </div>
+      <div class="grid">
+        <article class="item" data-e="Seminuevo"><div class="mini c1"><i></i></div><h3>iPhone 13</h3><p class="spec">128 GB</p><span class="badge used">Seminuevo</span><div class="price">$7,800</div><a class="btn small ghost" href="#contactos">Consultar</a></article>
+        <article class="item" data-e="Seminuevo"><div class="mini c2"><i></i></div><h3>iPhone 14</h3><p class="spec">128 GB</p><span class="badge used">Seminuevo</span><div class="price">$9,500</div><a class="btn small ghost" href="#contactos">Consultar</a></article>
+        <article class="item" data-e="Nuevo"><div class="mini c3"><i></i></div><h3>iPhone 15</h3><p class="spec">128 GB</p><span class="badge new">Nuevo</span><div class="price">$14,999</div><a class="btn small ghost" href="#contactos">Consultar</a></article>
+        <article class="item" data-e="Nuevo"><div class="mini c4"><i></i></div><h3>iPhone 16</h3><p class="spec">128 GB</p><span class="badge new">Nuevo</span><div class="price">$18,499</div><a class="btn small ghost" href="#contactos">Consultar</a></article>
+        <article class="item" data-e="Nuevo"><div class="mini c5"><i></i></div><h3>iPhone 16 Pro</h3><p class="spec">256 GB</p><span class="badge new">Nuevo</span><div class="price">$26,999</div><a class="btn small ghost" href="#contactos">Consultar</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="servicios">
+    <div class="wrap">
+      <h2>Servicios</h2>
+      <p class="lead">Dejamos tu iPhone funcionando como el primer día.</p>
+      <div class="services">
+        <div class="service"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2M9 6l6 6M12 5l3 3"/></svg><h3>Cambio de pantalla</h3><p>Reemplazo de pantalla rota o con fallas de imagen.</p></div>
+        <div class="service"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 10v4M11 9l-2 3h4l-2 3"/></svg><h3>Cambio de batería</h3><p>Recupera la duración de tu iPhone durante todo el día.</p></div>
+        <div class="service"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="8" height="12" rx="2"/><rect x="14" y="6" width="8" height="12" rx="2"/><path d="M11 10h2M12 9l1 1-1 1M13 14h-2M12 13l-1 1 1 1"/></svg><h3>Transferencia de datos</h3><p>Pasamos tus fotos, contactos y apps al equipo nuevo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contactos">
+    <div class="wrap contact">
+      <div>
+        <h2>Contacto</h2>
+        <p class="lead">Cuéntanos qué modelo buscas o qué servicio necesitas.</p>
+        <dl>
+          <dt>Teléfono</dt><dd><a href="tel:+526560000000">(656) 000-0000</a></dd>
+          <dt>Correo</dt><dd><a href="mailto:contacto@istore.com">contacto@istore.com</a></dd>
+        </dl>
+      </div>
+      <form action="mailto:contacto@istore.com" method="post" enctype="text/plain">
+        <label>Nombre <input type="text" name="nombre" required autocomplete="name"></label>
+        <label>Correo <input type="email" name="correo" required autocomplete="email"></label>
+        <label>Comentarios <textarea name="comentarios" rows="4"></textarea></label>
+        <div class="actions">
+          <button class="btn" type="submit">Enviar mensaje</button>
+          <button class="link" type="reset">Borrar</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><a class="logo" href="#inicio">iStore</a><p>Tu tienda de iPhone nuevos y seminuevos con garantía.</p></div>
+      <div><h4>Explorar</h4><a href="#catalogo">Catálogo</a><a href="#servicios">Servicios</a><a href="#contactos">Contacto</a></div>
+      <div><h4>Contacto</h4><a href="tel:+526560000000">(656) 000-0000</a><a href="mailto:contacto@istore.com">contacto@istore.com</a></div>
+    </div>
+    <div class="legal"><span>Castro López Emmanuel - Número de control: 0827</span><span>© iStore</span></div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.filters button').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.filters button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+    var f=b.dataset.f;
+    document.querySelectorAll('.item').forEach(function(r){r.hidden=(f!=='todos'&&r.dataset.e!==f)});
+  });
+});
+</script>
+</body>
+</html>
