@@ -4,157 +4,97 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cine</title>
+
+<!-- CSS básico: solo etiquetas, sin clases -->
 <style>
-  body { margin: 0; font-family: Arial, sans-serif; color: #222; background: #f4f4f4; }
-  .contenedor { max-width: 960px; margin: 0 auto; padding: 0 15px; }
-
-  /* Barra de navegación */
-  .nav { background: #14203a; padding: 12px 0; }
-  .logo { color: white; font-size: 26px; font-weight: bold; margin-right: 30px; }
-  .nav a { color: white; margin-right: 18px; text-decoration: none; }
-
-  /* Encabezado */
-  .encabezado { background: #c8102e; color: white; padding: 35px 0; }
-  .encabezado h1 { margin: 0 0 8px 0; }
-  .encabezado p { margin: 0; font-size: 18px; }
-
-  /* Cuerpo */
-  h2 { margin-top: 0; }
-  .seccion { padding: 30px 0; }
-  .blanco { background: white; }
-
-  /* Pósters: imagen con el título abajo */
-  .poster { display: inline-block; width: 170px; margin: 0 12px 20px 0; vertical-align: top; }
-  .poster img { display: block; width: 170px; height: 250px; }
-  .poster h3 { margin: 8px 0 2px 0; font-size: 16px; }
-  .poster p { margin: 0; font-size: 13px; color: #666; }
-
-  .fecha { color: #c8102e; font-weight: bold; }
-
-  /* Cine Club */
-  .caja { display: inline-block; width: 290px; vertical-align: top; margin: 0 15px 15px 0; padding: 18px; background: white; border: 1px solid #ccc; }
-  .caja h3 { margin-top: 0; }
-  .caja label { display: block; margin-top: 10px; font-weight: bold; }
-  .caja input { width: 100%; padding: 8px; font-size: 16px; box-sizing: border-box; }
-  .caja button { width: 100%; margin-top: 15px; padding: 10px; font-size: 16px; color: white; background: #c8102e; border: 0; }
-  .aviso { font-size: 13px; color: #666; }
-
-  /* Footer */
-  .footer { background: #14203a; color: #ccd3e0; padding: 20px 0; font-size: 14px; }
-  .footer p { margin: 4px 0; }
+  body { font-family: Arial; margin: 0; background: whitesmoke; }
+  nav { background: navy; color: white; padding: 15px; }
+  nav a { color: white; }
+  header { background: crimson; color: white; padding: 20px; }
+  section { padding: 15px; }
+  td { vertical-align: top; padding: 10px; }
+  footer { background: navy; color: white; padding: 15px; }
 </style>
 </head>
+
 <body>
 
-<!-- Barra de navegación -->
-<div class="nav">
-  <div class="contenedor">
-    <span class="logo">CINE</span>
-    <a href="#cartelera">Cartelera</a>
-    <a href="#proximos">Próximos estrenos</a>
-    <a href="#club">Cine Club</a>
-  </div>
-</div>
+<!-- Barra de navegación: el # lleva a la sección que tiene ese id -->
+<nav>
+  <b>CINE</b> |
+  <a href="#cartelera">Cartelera</a> |
+  <a href="#proximos">Próximos estrenos</a> |
+  <a href="#club">Cine Club</a>
+</nav>
 
 <!-- Encabezado -->
-<div class="encabezado">
-  <div class="contenedor">
-    <h1>Bienvenido a Cine</h1>
-    <p>Películas en cartelera, próximos estrenos y tu tarjeta Cine Club.</p>
-  </div>
-</div>
+<header>
+  <h1>Bienvenido a Cine</h1>
+  <p>Películas en cartelera, próximos estrenos y tu tarjeta Cine Club.</p>
+</header>
 
-<!-- Cuerpo -->
-<div class="seccion" id="cartelera">
-  <div class="contenedor">
-    <h2>En cartelera</h2>
+<!-- Cuerpo: las películas van en una tabla de una fila -->
+<section id="cartelera">
+  <h2>En cartelera</h2>
 
-    <!-- Para usar el póster real, cambia la dirección que está dentro de src="..." por la URL de la imagen -->
+  <table>
+    <tr>
+      <td>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSamm68UOhYXFvegdWPINRDRP1UVQ5oPjh-rJlHB4OrPw&s=10" alt="Digger" width="170">
+        <h3>Digger</h3>
+        <p>Drama · Estreno: 1 oct</p>
+      </td>
+      <td>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPoe0H3-sva-wC2n0nAIiWwjeOyMbpZdTytsOwc3IWEg&s=10" alt="Verity: La sombra de un engaño" width="170">
+        <h3>Verity: La sombra de un engaño</h3>
+        <p>Thriller · Estreno: 1 oct</p>
+      </td>
+      <td>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQfdFCZ0-HsagKHkaCr9eRz6YKfz8lHMQ95h53HLwjtg&s=10" alt="El último gran golpe" width="170">
+        <h3>El último gran golpe</h3>
+        <p>Crimen y thriller · Estreno: 1 oct</p>
+      </td>
+      <td>
+        <img src="https://img.vwassets.com/cinelinternamagica.com.mx/vertical_7712ad5b-1dbb-42e5-9b19-d41690bfe1ea.jpg" alt="Pinocho: El lado oscuro" width="170">
+        <h3>Pinocho: El lado oscuro</h3>
+        <p>Terror · Estreno: 1 oct</p>
+      </td>
+      <td>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9GUOwYA37k0UCV7uzAsiRdC15BSlx37B3-u3bnE1xDl9YBUKMc69WWNQ&s=10" alt="El poder de la red" width="170">
+        <h3>El poder de la red</h3>
+        <p>Drama · Estreno: 8 oct</p>
+      </td>
+    </tr>
+  </table>
+</section>
 
-    <div class="poster">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSamm68UOhYXFvegdWPINRDRP1UVQ5oPjh-rJlHB4OrPw&s=10" alt="Digger">
-      <h3>Digger</h3>
-      <p>Drama · Estreno: 1 oct</p>
-    </div>
+<section id="proximos">
+  <h2>Próximos estrenos</h2>
+  <p><b>22 oct</b> · Klara y el Sol, Aniquilación, Amarte, La venganza del Charro Negro</p>
+  <p><b>29 oct</b> · Sensatez y sentimiento, El bosque salvaje: Wildwood</p>
+  <p><b>6 nov</b> · Runner, El gato con sombrero, Dante</p>
+  <p><b>20 nov</b> · Los Juegos del Hambre: Amanecer en la cosecha</p>
+  <p><b>18 dic</b> · Vengadores: Doomsday, Dune 3</p>
+  <p><b>25 dic</b> · Jumanji: Mundo abierto</p>
+</section>
 
-    <div class="poster">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPoe0H3-sva-wC2n0nAIiWwjeOyMbpZdTytsOwc3IWEg&s=10" alt="Verity: La sombra de un engaño">
-      <h3>Verity: La sombra de un engaño</h3>
-      <p>Thriller · Estreno: 1 oct</p>
-    </div>
+<!-- Cine Club: un solo formulario con dos campos -->
+<section id="club">
+  <h2>Cine Club</h2>
+  <p>Escribe tu nombre y el número de tu tarjeta para entrar o registrarte.</p>
 
-    <div class="poster">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQfdFCZ0-HsagKHkaCr9eRz6YKfz8lHMQ95h53HLwjtg&s=10" alt="El último gran golpe">
-      <h3>El último gran golpe</h3>
-      <p>Crimen y thriller · Estreno: 1 oct</p>
-    </div>
+  <form method="post" action="#">
+    <p>Nombre: <input type="text" name="nombre"></p>
+    <p>Número de tarjeta: <input type="text" name="tarjeta"></p>
+  </form>
 
-    <div class="poster">
-      <img src="https://img.vwassets.com/cinelinternamagica.com.mx/vertical_7712ad5b-1dbb-42e5-9b19-d41690bfe1ea.jpg" alt="Pinocho: El lado oscuro">
-      <h3>Pinocho: El lado oscuro</h3>
-      <p>Terror · Estreno: 1 oct</p>
-    </div>
+  <p>Demostración: el formulario no guarda ni envía nada. No uses números de tarjetas reales.</p>
+</section>
 
-    <div class="poster">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9GUOwYA37k0UCV7uzAsiRdC15BSlx37B3-u3bnE1xDl9YBUKMc69WWNQ&s=10" alt="El poder de la red">
-      <h3>El poder de la red</h3>
-      <p>Drama · Estreno: 8 oct</p>
-    </div>
-
-  </div>
-</div>
-
-<div class="seccion blanco" id="proximos">
-  <div class="contenedor">
-    <h2>Próximos estrenos</h2>
-    <p><span class="fecha">22 oct</span> · Klara y el Sol, Aniquilación, Amarte, La venganza del Charro Negro</p>
-    <p><span class="fecha">29 oct</span> · Sensatez y sentimiento, El bosque salvaje: Wildwood</p>
-    <p><span class="fecha">6 nov</span> · Runner, El gato con sombrero, Dante</p>
-    <p><span class="fecha">20 nov</span> · Los Juegos del Hambre: Amanecer en la cosecha</p>
-    <p><span class="fecha">18 dic</span> · Vengadores: Doomsday, Dune 3</p>
-    <p><span class="fecha">25 dic</span> · Jumanji: Mundo abierto</p>
-  </div>
-</div>
-
-<div class="seccion" id="club">
-  <div class="contenedor">
-    <h2>Cine Club</h2>
-
-    <div class="caja">
-      <h3>Iniciar sesión</h3>
-      <form method="post" action="#">
-        <label for="tarjeta">Número de tarjeta Cine Club</label>
-        <input id="tarjeta" name="tarjeta" type="text" maxlength="16" placeholder="16 dígitos" required>
-        <label for="nip">NIP de 4 dígitos</label>
-        <input id="nip" name="nip" type="password" maxlength="4" placeholder="****" required>
-        <button type="submit">Entrar</button>
-      </form>
-    </div>
-
-    <div class="caja">
-      <h3>Registrarme</h3>
-      <form method="post" action="#">
-        <label for="nombre">Nombre</label>
-        <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
-        <label for="correo">Correo electrónico</label>
-        <input id="correo" name="correo" type="email" placeholder="nombre@correo.com" required>
-        <label for="nip2">Crea un NIP de 4 dígitos</label>
-        <input id="nip2" name="nip2" type="password" maxlength="4" placeholder="****" required>
-        <button type="submit">Crear mi tarjeta</button>
-      </form>
-    </div>
-
-    <p class="aviso">Demostración: los formularios no están conectados a ningún servidor, así que no guardan ni envían nada. No uses números de tarjetas reales.</p>
-  </div>
-</div>
-
-<!-- Footer -->
-<div class="footer">
-  <div class="contenedor">
-    <p><strong>CINE</strong> · Cartelera y estrenos de octubre a diciembre de 2026.</p>
-    <p>Sitio de demostración. Los títulos y fechas corresponden a la cartelera pública.</p>
-  </div>
-</div>
+<!-- Pie de página -->
+<footer>
+  Alumno Castro Lopez Emmanuel
+</footer>
 
 </body>
 </html>
