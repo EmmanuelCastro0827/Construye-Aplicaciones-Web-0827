@@ -1,6 +1,5 @@
 <?php
 session_start();
-session_destroy();
+session_destroy(); // cierra la sesión
 header("Location: login.php");
-exit;
 ?>
