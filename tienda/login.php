@@ -3,20 +3,18 @@ include "conexion.php";
 $mensaje = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $correo = trim($_POST["correo"]);
+    $correo   = $conexion->real_escape_string($_POST["correo"]);
     $password = $_POST["password"];
 
-    $stmt = $conexion->prepare("SELECT id, nombre, password FROM usuarios WHERE correo = ?");
-    $stmt->bind_param("s", $correo);
-    $stmt->execute();
-    $resultado = $stmt->get_result();
+    // Buscamos al usuario por su correo
+    $resultado = $conexion->query("SELECT * FROM usuarios WHERE correo = '$correo'");
     $usuario = $resultado->fetch_assoc();
 
+    // Si existe y la contraseña coincide, guardamos sus datos en la sesión
     if ($usuario && password_verify($password, $usuario["password"])) {
         $_SESSION["usuario_id"] = $usuario["id"];
         $_SESSION["nombre"] = $usuario["nombre"];
         header("Location: tienda.php");
-        exit;
     } else {
         $mensaje = "Correo o contraseña incorrectos.";
     }
@@ -32,10 +30,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="caja">
         <h1>Iniciar sesión</h1>
+
         <?php
-        if (isset($_GET["registrado"])) echo "<p class='ok'>Registro exitoso, ya puedes entrar.</p>";
-        if ($mensaje != "") echo "<p class='error'>$mensaje</p>";
+        if (isset($_GET["registrado"])) {
+            echo "<p class='ok'>Registro exitoso, ya puedes entrar.</p>";
+        }
         ?>
+        <p class="error"><?php echo $mensaje; ?></p>
+
         <form method="POST">
             <label>Correo:</label>
             <input type="email" name="correo" required>
@@ -45,6 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <button type="submit">Entrar</button>
         </form>
+
         <p>¿No tienes cuenta? <a href="registro.php">Regístrate</a></p>
     </div>
 </body>
